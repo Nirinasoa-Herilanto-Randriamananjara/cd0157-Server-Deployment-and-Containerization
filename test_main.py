@@ -7,10 +7,10 @@ import pytest
 
 import main
 
-SECRET = 'TestSecret'
-TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjEzMDY3OTAsIm5iZiI6MTU2MDA5NzE5MCwiZW1haWwiOiJ3b2xmQHRoZWRvb3IuY29tIn0.IpM4VMnqIgOoQeJxUbLT-cRcAjK41jronkVrqRLFmmk'
-EMAIL = 'wolf@thedoor.com'
-PASSWORD = 'huff-puff'
+SECRET = 'myjwtsecret'
+TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjU3NzU1NTcsIm5iZiI6MTY2NDU2NTk1NywiZW1haWwiOiJuaHJAbWFpbC5jb20ifQ.5N1w0RSwGdKM-pRkz1fC0YcHWIeThhr8F4u-Jawu7gY"'
+EMAIL = 'nhr@mail.com'
+PASSWORD = 'azerty'
 
 @pytest.fixture
 def client():
@@ -25,7 +25,7 @@ def client():
 def test_health(client):
     response = client.get('/')
     assert response.status_code == 200
-    assert response.json == 'Healthy'
+    assert response.json == 'Healthy ...'
 
 
 def test_auth(client):
